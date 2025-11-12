@@ -1,0 +1,86 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Light mode default */
+body {
+  background-color: #f2f2f2;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+}
+
+/* Dark mode */
+body.dark {
+  background-color: #222;
+  color: #f2f2f2;
+}
+
+/* Toggle switch design */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 34px;
+  margin: 20px 0;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #ddd;
+  border-radius: 34px;
+  transition: background-color 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  font-size: 20px;
+}
+
+/* Icon positions */
+.icon {
+  transition: transform 0.4s;
+}
+
+.sun {
+  color: #f9d71c;
+}
+
+.moon {
+  color: #c0c0c0;
+}
+
+/* Move the slider to show dark mode */
+input:checked + .slider {
+  background-color: #555;
+}
+
+input:checked + .slider .sun {
+  transform: translateX(30px);
+  opacity: 0;
+}
+
+input:checked + .slider .moon {
+  transform: translateX(-30px);
+  opacity: 1;
+}
